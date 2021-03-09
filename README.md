@@ -87,7 +87,7 @@ ___
 Take 5 minutes to get a look at the data structures above.
 
 Once you've finished, let's see if we can make some informed guesses about which of these data structures would be most useful and why for these scenarios:
-- Managing food inventory at a restaurant
+- Modeling a can of Pringles
 - Storing the flight information for passengers on a plane once they've been seated and updating their locations when they arrive at their destination.
 - Creating a system for organizing where books should be found in a library
 - A system for tracking artists that have been booked for a music festival
