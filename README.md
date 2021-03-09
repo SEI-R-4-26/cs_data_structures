@@ -56,7 +56,7 @@ Likewise, when you solved problems on sites like [Codewars](https://codewars.com
 ___
 ## Data Structures
 
-![](datastructures.png)
+![](images/datastructures.png)
 
 We've gotten comfortable with some primitive and non-primitive data structures already. Think numbers, booleans, strings, arrays, and objects! Each of these data structures serves a purpose, and is used for specific needs. Likewise as we get into more complex data structures that we'll have to define ourselves to use, they each have a particular use case. Knowing how to implement them is important, but knowing _when_ to use them is the thing that makes us engineers! Let's not worry about the complexity regarding data structures for now. Put simply:
 
