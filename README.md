@@ -35,6 +35,7 @@ If you know the characteristics of one data structure in contrast to another you
 
 This repo will serve as a starting point for marrying the different concepts of algorithms, data structures, and efficiency with computer science fundamentals, breaking them down into simple parts. As we learn new concepts, the repository will be updated with notes and code for each concept. 
 
+___
 ## Algorithms
 Up to this point in the course, we've covered several algorithms including brute force sorting algorithms, divide and conquer sorting algorithms, search and binary search algorithms, but let's stop first and consider what an algorithm is, since computer science topics often get lost in translation. So, what is an algorithm, really? Simply put:
 
@@ -52,9 +53,7 @@ That's it! The sorts and searching algorithms we've covered are just that. When 
 
 Likewise, when you solved problems on sites like [Codewars](https://codewars.com), you were writing _algorithms_ all along! Some algorithms are more efficient than others at reaching their end goals, which is why we as software engineers try to accurately measure their efficiency with metrics like [Big-O Notation](https://github.com/SEI-R-1-25/u2_lesson_big_O).
 
-
-
-
+___
 ## Data Structures
 
 ![](datastructures.png)
@@ -80,6 +79,7 @@ Let's think about the sort of use cases we have for objects and arrays.
 
 We'll be covering Linked Lists, Stacks and Queues, Hash Tables, Sets, Binary Search Trees, and Graphs in more detail, but for now let's try out making some architectural decisions!
 
+___
 ## Exercise
 
 ![](https://www.cs.rochester.edu/u/brown/172/pics/data_structures_01.jpg)
@@ -93,6 +93,8 @@ Once you've finished, let's see if we can make some informed guesses about which
 - A system for tracking artists that have been booked for a music festival
 - Sorting a collection of plants by their heights
 
+___
+## Big-O
 One last thing before we move on. Let's take a look at some of the Big-O time and space complexities for different data structures. From this, we can also get a better idea about when certain data structures should be used over others.
 
 ![](https://2.bp.blogspot.com/-Uu2-jFBb1vg/V9b_6fgEroI/AAAAAAAAK1c/5Rq6dTd6gks9PbOxD5XQC-Dyhdu_Ir8_wCK4B/s1600/data-structure-complexity-codemio.png)
