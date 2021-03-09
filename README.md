@@ -78,7 +78,7 @@ Let's think about the sort of use cases we have for objects and arrays.
 - When would an array be a better option than an object?
 - When would the key value store of an object be more practical than an array?
 
-We'll be covering Linked Lists, Stacks and Queues, Hash Tables, Binary Search Trees, and Graphs in more detail, but for now let's try out making some architectural decisions!
+We'll be covering Linked Lists, Stacks and Queues, Hash Tables, Sets, Binary Search Trees, and Graphs in more detail, but for now let's try out making some architectural decisions!
 
 ## Exercise
 
@@ -88,7 +88,12 @@ Take 5 minutes to get a look at the data structures above.
 
 Once you've finished, let's see if we can make some informed guesses about which of these data structures would be most useful and why for these scenarios:
 - Managing food inventory at a restaurant
-- 
+- Storing the flight information for passengers on a plane once they've been seated and updating their locations when they arrive at their destination.
+- Creating a system for organizing where books should be found in a library
+- A system for tracking artists that have been booked for a music festival
+- Sorting a collection of plants by their heights
 
+One last thing before we move on. Let's take a look at some of the Big-O time and space complexities for different data structures. From this, we can also get a better idea about when certain data structures should be used over others.
 
+![](https://2.bp.blogspot.com/-Uu2-jFBb1vg/V9b_6fgEroI/AAAAAAAAK1c/5Rq6dTd6gks9PbOxD5XQC-Dyhdu_Ir8_wCK4B/s1600/data-structure-complexity-codemio.png)
 
