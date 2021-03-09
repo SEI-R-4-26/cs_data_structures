@@ -57,10 +57,26 @@ Likewise, when you solved problems on sites like [Codewars](https://codewars.com
 
 ## Data Structures
 
+![](datastructures.png)
+
+We've gotten comfortable with some primitive and non-primitive data structures already. Think numbers, booleans, strings, arrays, and objects! Each of these data structures serves a purpose, and is used for specific needs. Likewise as we get into more complex data structures that we'll have to define ourselves to use, they each have a particular use case. Knowing how to implement them is important, but knowing _when_ to use them is the thing that makes us engineers! Let's not worry about the complexity regarding data structures for now. Put simply:
+
+**A data structure is a way of organizing information.**
+
+Think about how you've needed to set up data structures when building applications or solving algorithms. What sort of data structures were needed to create the organization you needed at the time? What were the benefits or consequences of making or not making the right architectural decision?
+
+Complex (Non-Primitive) data structures can generally be split into two main categories: `Linear` and `Non-Linear`. You can think of these categories more simply by thinking of them as either ordered/indexed or unordered data structures. What are some examples of `Linear` and `Non-Linear` data structures that we've already used with JavaScript?
+
+<details><summary>Hint</summary>
+
+  - `[]`
+  - `{}`
+
+</details>
+
 
 
 ![](https://www.cs.rochester.edu/u/brown/172/pics/data_structures_01.jpg)
 
-A data structure is a way of organizing information.
 
 
