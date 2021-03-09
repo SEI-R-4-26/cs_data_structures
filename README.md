@@ -97,5 +97,9 @@ ___
 ## Big-O
 One last thing before we move on. Let's take a look at some of the Big-O time and space complexities for different data structures. From this, we can also get a better idea about when certain data structures should be used over others.
 
+- What are the best structures for accessing data?
+- How about inserting and deleting data?
+- What might we use if being able to search through data quickly is important?
+
 ![](https://2.bp.blogspot.com/-Uu2-jFBb1vg/V9b_6fgEroI/AAAAAAAAK1c/5Rq6dTd6gks9PbOxD5XQC-Dyhdu_Ir8_wCK4B/s1600/data-structure-complexity-codemio.png)
 
