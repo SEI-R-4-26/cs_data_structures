@@ -55,6 +55,12 @@ Likewise, when you solved problems on sites like [Codewars](https://codewars.com
 
 
 
+## Data Structures
+
+
+
+![](https://www.cs.rochester.edu/u/brown/172/pics/data_structures_01.jpg)
+
 A data structure is a way of organizing information.
 
 
