@@ -74,9 +74,21 @@ Complex (Non-Primitive) data structures can generally be split into two main cat
 
 </details>
 
+Let's think about the sort of use cases we have for objects and arrays. 
+- When would an array be a better option than an object?
+- When would the key value store of an object be more practical than an array?
 
+We'll be covering Linked Lists, Stacks and Queues, Hash Tables, Binary Search Trees, and Graphs in more detail, but for now let's try out making some architectural decisions!
+
+## Exercise
 
 ![](https://www.cs.rochester.edu/u/brown/172/pics/data_structures_01.jpg)
+
+Take 5 minutes to get a look at the data structures above.
+
+Once you've finished, let's see if we can make some informed guesses about which of these data structures would be most useful and why for these scenarios:
+- Managing food inventory at a restaurant
+- 
 
 
 
