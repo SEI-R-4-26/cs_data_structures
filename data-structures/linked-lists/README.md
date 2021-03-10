@@ -23,7 +23,7 @@ Linked Lists always start with a `head` node, where access to the list is found 
 
 ```js
 class LinkedList {
-  constructor(data, next = null) {
+  constructor() {
     this.head = null;
     this.tail = null;
     this.size = 0;
