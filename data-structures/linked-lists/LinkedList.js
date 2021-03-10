@@ -1,139 +1,223 @@
 const Node = require('./Node')
 
-// Create/Get/Remove Nodes From Linked List
 class LinkedList {
-  constructor() {
-    this.head = null;
-    this.size = 0;
+  constructor(){
+      // a Linked List starts with a "head" property intialized as null
+      this.head = null;
+      this.tail = null;
+      this.size = 0;
   }
 
-  // Insert first node
-  insertFirst(data) {
-    this.head = new Node(data, this.head);
-    this.size++;
-  }
+  appendNode(data){
+    // O(1)
+    // creates a new node with the given data and adds it to back of the list
+    const newNode = new Node(data);
 
-  // Insert last node
-  insertLast(data) {
-    let node = new Node(data);
-    let current;
-
-    // If empty, make head
+    // If there is no head yet let's make new node a head. 
     if (!this.head) {
-      this.head = node;
-    } else {
-      current = this.head;
-
-      while (current.next) {
-        current = current.next;
-      }
-
-      current.next = node;
+      this.head = newNode;
+      this.tail = newNode;
+      this.size++;
+      return this;
     }
 
+    // Attach new node to the end of linked list.
+    this.tail.next = newNode;
+    this.tail = newNode;
     this.size++;
+    return this;
   }
 
-  // Insert at index
-  insertAt(data, index) {
-    //  If index is out of range
-    if (index > 0 && index > this.size) {
-      return;
+  prependNode(data){
+    // O(1)
+    // creates a new node with the given data and adds it to the front of the list
+    // Make new node to be a head.
+    const newNode = new Node(data, this.head);
+    this.head = newNode;
+
+    // If there is no tail yet let's make new node a tail.
+    if (!this.tail) {
+      this.tail = newNode;
     }
 
-    // If first index
-    if (index === 0) {
-      this.insertFirst(data);
-      return;
-    }
-
-    const node = new Node(data);
-    let current, previous;
-
-    // Set current to first
-    current = this.head;
-    let count = 0;
-
-    while (count < index) {
-      previous = current; // Node before index
-      count++;
-      current = current.next; // Node after index
-    }
-
-    node.next = current;
-    previous.next = node;
-
-    this.size++;
+    this.size++
+    return this;
   }
 
-  // Get at index
-  getAt(index) {
+  pop(){
+    // O(n)
+    // removes the last node from the list and returns it
+    if(!this.head) return console.log('There is no head');
+    if(!this.head.next) return this.removeFromFront();
+    
+    const deletedNode = this.tail;
     let current = this.head;
-    let count = 0;
+    let previous = null;
 
-    while (current) {
-      if (count == index) {
-        console.log(current.data);
-      }
-      count++;
+    while(current.next) {
+      previous = current;
       current = current.next;
     }
 
-    return null;
+    previous.next = null;
+    this.tail = previous;
+    this.size--;
+    return deletedNode;
   }
 
-  // Remove at index
-  removeAt(index) {
-    if (index > 0 && index > this.size) {
-      return;
-    }
+  removeFromFront(){
+      // O(1)
+      // remove the head node from the list and return it
+      // the next node in the list is the new head node
+      if(!this.head) return console.log('There is no head');
+      
+      const deletedNode = this.head;
+      this.head = this.head.next;
+      this.size--;
+      return deletedNode;
+  }
 
+  insertAt(index, data){
+    // O(n)
+    // insert a new node into the list with the given data
+    // place it after X nodes in the list
+    // if X exceeds the bounds of the list, put the node at the end
+    // insertAt(0, 7) would add the new node as the head
+    if(index > 0 && index > this.size) return console.log('Index does not exist');
+    if(index === 0) return this.addNodeAtHead(data);
+    
+    const newNode = new Node(data);
+    
     let current = this.head;
-    let previous;
+    let previous = null;
     let count = 0;
 
-    // Remove first
-    if (index === 0) {
-      this.head = current.next;
-    } else {
-      while (count < index) {
+    while(count < index) {
+      count++;
+      previous = current;
+      current = current.next;
+    }
+
+    previous.next = newNode;
+    newNode.next = current;
+    this.size++;
+    return this;
+  }
+
+  removeAt(index){
+      // O(n)
+      // remove the Xth node from the list, considering 0 to be the first node
+      // return the node that has been removed
+      if(index > 0 && index >= this.size || !this.head) return console.log('Index not found');
+      if(index === 0) return this.removeFromFront();
+
+      let current = this.head;
+      let previous = null;
+      let count = 0;
+
+      while(count < index) {
         count++;
         previous = current;
         current = current.next;
       }
 
+      const deletedNode = current;
       previous.next = current.next;
-    }
-
-    this.size--;
+      this.size--;
+      return deletedNode;
   }
 
-  // Clear list
+  search(data){
+      // O(n)
+      // searches the list for a node with the given data
+      // if it is found, return the "index" of the node, considering 0 to be the first node
+      // if not, return false
+      if (!this.head) return false;
+      if (this.tail.data === data) return this.size - 1;
+
+      let current = this.head;
+      let previous = null;
+      let count = 0;
+
+      while(current.data !== data && count < this.size - 1) {
+        count++;
+        previous = current;
+        current = current.next;
+      }
+
+      return current.data===data ? count : false;
+  }
+
+  sort(){
+      // sort the Linked List in ascending order of data values
+      // current node will point to the head  
+      let currentNode = this.head;  
+      let nextNode = null;  
+        
+      if (this.head === null) return console.log('Cannot sort an empty list!');  
+  
+      while(currentNode !== null) {
+        // nextNode will point to node next to currentNode  
+        nextNode = currentNode.next;  
+          
+        while(nextNode != null) {
+          // If currentNode node's data is greater than nextNode's node data, swap the data between them  
+          if(currentNode.data > nextNode.data) {
+            const temp = currentNode.data;  
+            currentNode.data = nextNode.data;  
+            nextNode.data = temp;  
+          }  
+          nextNode = nextNode.next;  
+        }
+        currentNode = currentNode.next;  
+      }
+      return this;
+  }
+
   clearList() {
     this.head = null;
+    this.tail = null;
     this.size = 0;
+    return this;
   }
 
-  // Print list data
-  printListData() {
+  printList() {
+    // O(n)
     let current = this.head;
 
     while (current) {
-      console.log(current.data);
+      console.log("node: ", current.data);
       current = current.next;
     }
+    console.log('')
   }
 }
 
 const myList = new LinkedList();
 
-myList.insertFirst(100);
-myList.insertFirst(200);
-myList.insertFirst(300);
-myList.insertLast(400);
-myList.insertAt(500, 3);
-
-// myList.clearList();
-// myList.getAt(2);
-
-myList.printListData();
+myList.prependNode(3400);
+myList.prependNode(7000);
+myList.prependNode(300);
+myList.appendNode(400);
+myList.prependNode(800);
+myList.appendNode(900);
+myList.insertAt(3, 1500)
+myList.printList();
+const poppedNode = myList.pop()
+console.log('poppedNode: ', poppedNode)
+console.log('')
+myList.printList()
+const shiftedNode = myList.removeFromFront()
+console.log('shiftedNode: ', shiftedNode)
+console.log('')
+myList.printList()
+const removedNodeAt = myList.removeAt(3)
+console.log('removedNodeAt: ', removedNodeAt)
+console.log('')
+myList.printList()
+const foundNodeIndex = myList.search("ayyyy")
+console.log('foundNodeIndex: ', foundNodeIndex)
+console.log('')
+myList.sort()
+console.log('sorted list:')
+myList.printList()
