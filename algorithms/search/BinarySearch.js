@@ -1,66 +1,3 @@
-
-// WORST CASE: O(log(n))
-
-
-
-
-// Given a sorted array and a search value, 
-
-//     Find the middle element in the array. (If the array has an even number of elements, then take the one just left of center.)
-
-//     Did we get lucky — is this it?  
-
-//         Then, great!  We’re done!  
-
-//     If not,
-
-//         If the word we’re searching for comes before this middle element, 
-
-//             Search the subsection of the array from 0 to the element right before the middle element.
-
-//         Or, if it comes after this middle element,
-
-//             Search the subsection of the array from just to the element through to the end.
-
-
-const sortedArray = [1,2,3,4,5,6,7,8,9,10,17,18,19,20,21,22,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,50,51,56,57,58,59,60,61,62,63,64,65,2,73,74,75,76,77,78,79,80,81,82,83,84,91,97,98,99,100, 231, 3241, 4235324, 4642567537]
-
-
-
-// BIG-O: O(n)
-function linearSearch(arr, element) {
-  // Take array and element we're searching for as arguments
-  let found = false;
-  // Set a boolean to track whether or not we've found the element
-  let position = -1;
-  // Position starts at -1, if we don't find the element, the return will be -1
-  let index = 0;
-  // starting index is 0
-
-  while(!found && index < arr.length) {
-    console.log('searching')
-  // While we haven't the element yet and the index is less then the entire array length
-      if(arr[index] == element) {
-        // If it's a match
-          found = true;
-          // set found to true, which will exit the while loop
-          position = index;
-          // set position to the index of the match
-          break;
-      } else {
-          index += 1;
-          // Otherwise, we'll keep moving up to check the next index
-      }
-  }
-  return position;
-  // return the position
-}
-
-// console.log(linearSearch(sortedArray, 74))
-
-
-
-
 // BIG-O: O(log(n))
 
 function binarySearch(arr, element) {
@@ -101,8 +38,6 @@ function binarySearch(arr, element) {
 
 
 
-
-
 function recursiveBinarySearch(arr, target, min, max) {
   // Takes in arguments for the array we're searching, the target element, min, and max
 	let targetArray = arr.slice();
@@ -130,26 +65,4 @@ function recursiveBinarySearch(arr, target, min, max) {
   // Otherwise, we know that it has to be in the left side of the array, so we'll do a binary search there
 };
 
-console.log(rBinarySearch(sortedArray, 83))
-
-// Given an array, a value, and specified start and end points,
-
-//     Find the middle element in the specified subsection. (If this subsection of the array has an even number of elements, take the one just left of center.)
-
-//     Is there just one element in this subarray? Is that what we want? 
-
-//         Then great — we’re done! We have our index.
-
-//     If our subsection got shrank all the way down to 0 size,
-
-//         Then, welp, it’s not there.  
-
-//     If not,
-
-//         If the word we’re searching for comes before this middle element, 
-
-//             Search the subsection of the array from 0 to the element right before the middle element.
-
-//         Or, if it comes after this middle element,
-
-//             Search the subsection of the array from just to the element through to the end.
+// console.log(rBinarySearch(sortedArray, 83))
