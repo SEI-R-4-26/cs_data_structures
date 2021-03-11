@@ -92,30 +92,31 @@ class StackArr {
   } 
 }
 
-const myStack = new StackArr()
+const myStack = new StackArr();
 
-console.log(myStack)
+console.log(myStack);
 
-myStack.push({movement: 'white pawn E2 to E4'})
-myStack.push({movement: 'black knight B8 to C6'})
-myStack.push({movement: 'white pawn D2 to D3'})
-myStack.push({movement: 'black knight C6 to B4'})
-myStack.push({movement: 'white pawn A2 to A3'})
-myStack.push({movement: 'black knight B4 to D3 captures white pawn'})
-myStack.push({movement: 'white queen D1 to D3 captures black knight'})
-myStack.push({movement: 'black pawn D7 to D6'})
-myStack.push({movement: 'white bishop F1 to E2'})
-myStack.push({movement: 'black pawn G7 to G6 '})
-myStack.push({movement: 'white bishop E2 to G4'})
-myStack.push({movement: 'black biship C8 to G4 captures white bishop'})
-myStack.printStack()
-console.log("Last Move: ", myStack.peek())
-console.log('')
-myStack.pop()
-myStack.pop()
-myStack.pop()
-myStack.pop()
-myStack.pop()
-console.log("Last Move: ", myStack.peek())
+myStack.push({movement: 'white pawn E2 to E4'}); 
+myStack.push({movement: 'black knight B8 to C6'});
+myStack.push({movement: 'white pawn D2 to D3'});
+myStack.push({movement: 'black knight C6 to B4'});
+myStack.push({movement: 'white pawn A2 to A3'});
+myStack.push({movement: 'black knight B4 to D3 captures white pawn'});
+myStack.push({movement: 'white queen D1 to D3 captures black knight'});
+myStack.push({movement: 'black pawn D7 to D6'});
+myStack.push({movement: 'white bishop F1 to E2'});
+myStack.push({movement: 'black pawn G7 to G6 '});
+myStack.push({movement: 'white bishop E2 to G4'});
+myStack.push({movement: 'black biship C8 to G4 captures white bishop'});
+myStack.printStack();
+console.log("Last Move: ", myStack.peek());
+console.log('');
+myStack.pop();
+myStack.pop();
+myStack.pop();
+myStack.pop();
+myStack.pop();
+myStack.printStack();
+console.log("Last Move: ", myStack.peek());
 
 

@@ -1,5 +1,3 @@
-const Node = require('./Node')
-
 // Construct Single Node
 class Node {
   constructor(data, next = null) {
@@ -206,51 +204,38 @@ class LinkedList {
 
 const myList = new LinkedList();
 
-
 myList.appendNode(400);
 myList.appendNode(900);
-myList.printList()
-
+myList.printList();
 myList.prependNode(800);
 myList.prependNode(3400);
 myList.prependNode(7000);
 myList.prependNode(300);
-myList.printList()
-
-const poppedNode = myList.pop()
-console.log('poppedNode: ', poppedNode)
-console.log('')
-
-const shiftedNode = myList.removeFromFront()
-console.log('shiftedNode: ', shiftedNode)
-console.log('')
-
-myList.printList()
-
-myList.insertAt(3, 1500)
-myList.insertAt(1, 250)
-myList.insertAt(5, 600)
-
-
 myList.printList();
 
-const removedNodeAt = myList.removeAt(3)
-console.log('removedNodeAt: ', removedNodeAt)
-console.log('')
+const poppedNode = myList.pop();
+console.log('poppedNode: ', poppedNode);
+console.log('');
 
-myList.printList()
+const shiftedNode = myList.removeFromFront();
+console.log('shiftedNode: ', shiftedNode);
+console.log('');
+myList.printList();
 
-console.log("Searching for 3400. Index found: ", myList.search(3400))
-console.log("Searching for 3600. Index found: ", myList.search(3600))
-console.log('')
-myList.sort()
-myList.printList()
-// myList.printList()
-// const foundNodeIndex = myList.search("ayyyy")
-// console.log('foundNodeIndex: ', foundNodeIndex)
-// console.log('')
-// myList.sort()
-// console.log('sorted list:')
-// myList.printList()
+myList.insertAt(3, 1500);
+myList.insertAt(1, 250);
+myList.insertAt(5, 600);
+myList.printList();
 
-console.log(myList)
+const removedNodeAt = myList.removeAt(3);
+console.log('removedNodeAt: ', removedNodeAt);
+console.log('');
+myList.printList();
+
+console.log("Searching for 3400. Index found: ", myList.search(3400));
+console.log("Searching for 3600. Index found: ", myList.search(3600));
+console.log('');
+myList.sort();
+myList.printList();
+
+console.log(myList);

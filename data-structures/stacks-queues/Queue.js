@@ -94,26 +94,26 @@ class QueueArr {
 }
 
 
-const myQueue = new QueueArr()
+const myQueue = new QueueArr();
 
-myQueue.enqueue({request: 'GET /api/users'})
-myQueue.enqueue({request: 'POST /api/auth/register'})
-myQueue.enqueue({request: 'POST /api/auth/login'})
-myQueue.enqueue({request: 'GET /api/users/yt03948rt09384uo0983y4'})
-myQueue.enqueue({request: 'PUT /api/users/yt03948rt09384uo0983y4'})
-myQueue.enqueue({request: 'GET /api/posts/'})
-myQueue.enqueue({request: 'GET /api/posts/b09di2je0vjasvs098wqr'})
-myQueue.enqueue({request: 'DELETE /api/posts/b09di2je0vjasvs098wqr'})
-myQueue.enqueue({request: 'POST /api/posts'})
-myQueue.enqueue({request: 'GET /api/users'})
-myQueue.enqueue({request: 'POST /api/users/follow/c7qw15u09as4du90u'})
-myQueue.printQueue()
-console.log("First In Line: ", myQueue.peek())
-console.log('')
-myQueue.dequeue()
-myQueue.dequeue()
-myQueue.dequeue()
-myQueue.dequeue()
-myQueue.dequeue()
-myQueue.printQueue()
-console.log("First In Line: ", myQueue.peek())
+myQueue.enqueue({request: 'GET /api/users'});
+myQueue.enqueue({request: 'POST /api/auth/register'});
+myQueue.enqueue({request: 'POST /api/auth/login'});
+myQueue.enqueue({request: 'GET /api/users/yt03948rt09384uo0983y4'});
+myQueue.enqueue({request: 'PUT /api/users/yt03948rt09384uo0983y4'});
+myQueue.enqueue({request: 'GET /api/posts/'});
+myQueue.enqueue({request: 'GET /api/posts/b09di2je0vjasvs098wqr'});
+myQueue.enqueue({request: 'DELETE /api/posts/b09di2je0vjasvs098wqr'});
+myQueue.enqueue({request: 'POST /api/posts'});
+myQueue.enqueue({request: 'GET /api/users'});
+myQueue.enqueue({request: 'POST /api/users/follow/c7qw15u09as4du90u'});
+myQueue.printQueue();
+console.log('');
+myQueue.dequeue();
+myQueue.dequeue();
+myQueue.dequeue();
+myQueue.dequeue();
+myQueue.dequeue();
+myQueue.printQueue();
+console.log("First In Line: ", myQueue.peek());
+
