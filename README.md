@@ -5,12 +5,12 @@
 
 ## Navigation
 
-- [Linked Lists](./data-structures/linked-lists/README.md)
-- [Stacks and Queues](./data-structures/stacks-queues/README.md)
-- [Hash Tables](./data-structures/hash-tables/README.md)
-- [Sets](./data-structures/sets/README.md)
-- [Binary Trees](./data-structures/binary-trees/README.md)
-- [Graphs](./data-structures/graphs/README.md)
+- [Linked Lists](./data-structures/linked-lists/)
+- [Stacks and Queues](./data-structures/stacks-queues/)
+- [Hash Tables](./data-structures/hash-tables/)
+- [Sets](./data-structures/sets/)
+- [Binary Trees](./data-structures/binary-trees/)
+- [Graphs](./data-structures/graphs/)
 
 ## Overview
 A lot of beginners and experienced programmers avoid learning Data Structures and Algorithms because they're complicated and think that there isn't a use for them in real life. As it turns out, we're actually using them all the time! Did you know that under the hood all your React files, MongoDB databases and Linux commands are algorithms and data structures? 
