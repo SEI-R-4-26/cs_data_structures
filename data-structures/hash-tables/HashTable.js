@@ -1,78 +1,143 @@
-class Node {
-  constructor(key, value) {
-    // should have a property called "data" that stores key and value in an array: [key, value]
-    // should have a reference to the next node called "next", initialized to null
+class HashTable{
+  // default bucket size 31
+  constructor(size=31){
+    this.buckets = new Array(size);
   }
-  get key() {
-    // return the actual key from the data property
-  }
-  get value() {
-    // return the actual value from the data property
-  }
-}
 
-// note: this is a simpler LinkedList class than in the Linked List lesson
-class LinkedList {
-  constructor(){
-    // initialize a "head" property to null
+  hash(key){
+    // create a hashed number value from the string
+    const charArray = key.split('').map(char => char.charCodeAt(0));
+    // djb2 hashing algorithm
+    const hashCode = charArray.reduce((acc, cVal) => ((acc << 5) + acc) + cVal, 5381);
+  
+    // get an index from its value within the length of the buckets array
+    const index = hashCode % this.buckets.length;
+    return index < 0 ? index*-1 : index;
   }
-  add(key, value){
-    // create a new Node with the given data as its data property 
-    // if this list's head is null make that node the head, 
-    // otherwise add it to end of the list
+
+  insert(key,value){
+    // get the index
+    const index = this.hash(key);
+    // create a new bucket if one does not exist
+    if(!this.buckets[index]){
+      this.buckets[index] = [];
+    }
+    // add the key value pair to the bucket
+    this.buckets[index].push([key,value]);
+    return index;
   }
-  delete(key){
-    // search the list for a node whose data has a key that matches the key parameter
-    // remove it from the list and return it
-    // if no such node exists, return false
-  }
+
   search(key){
-    // searches the list for a given key
-    // if it is found, return it
-    // if not, return false
-  }  
+    // index of the bucket
+    const index = this.hash(key);
+    // if there is no bucket
+    if(!this.buckets[index]) return null;
+    // Otherwise, check the bucket(s)
+    for(let bucket of this.buckets[index]){
+      // if key  matches, return it's value
+      if (bucket[0]===key){
+        return bucket[1]; // bucket = [key, value]
+      }
+    }
+    return null;
+  }
+
+  delete(key){
+    // check if the bucket exists with a quick search
+    if (this.search(key)) {
+      // store the deleted bucket value and its key in a variable
+      const deletedBucket = [key, this.search(key)];
+      // get the index
+      const index = this.hash(key);
+      // remove the bucket from the array its index
+      const newBuckets = this.buckets[index].filter(bucket => bucket[0]!==key);
+      this.buckets[index] = newBuckets;
+      // Return the deleted bucket 
+      return deletedBucket;
+    }
+    console.log('Bucket not found');
+    return null;
+  }
 }
 
-class HashTable {
-  constructor(size) {
-    // initialize table size - prime number size is recommended to avoid clustering
-    // intialize the table to have "size" number of elements, set to null
-    // the table will be an array named "table"
-  }
 
-  hash(key) {
-    // calculate and return an integer value based key, like in the lesson
-    // remember, if you are using modulus, it is recommended to use a prime number to avoid clustering
-  }
 
-  insert(key, value) {
-    // hash the key to get an integer index
 
-    // if there's no linked list at that index in the table 
-      // create one and add it
-      // and insert this key value pair into the new Linked list
+const myHashTable = new HashTable(13);
 
-    // if there's a linked list at that index
-      // if a node already exists with the key, update it the data in that node to store the new value
-    
-    // otherwise
-      // add a new node with the given value to the end of the linked list
 
-    // for the convenience of the user, you might wish to return the node, or you can just return true
-  }
 
-  delete(key) {
-    // lookup the key (i.e. hash it to get an index)
-    // if the key is, in fact, in the linked list, delete that Node and return it
-    // if the key wasn't found return -1
-  }
 
-  search(key) {
-    // hash key to get index
-    // search the linked list at the index
-    // if the key is found, return the Node
-    // if not, return -1
-  }
+myHashTable.insert('adam', 'ahonore42');
+myHashTable.insert('michael', 'mlackey9601');
+myHashTable.insert('andre', 'anpato');
+myHashTable.insert('lizz', 'Lizzwest');
+myHashTable.insert('hunter', 'whlong1');
+myHashTable.insert('andrew', 'andrewliu1988');
+myHashTable.insert('jonte', 'JYoung554');
+myHashTable.insert('faryal', 'f-ansari');
+myHashTable.insert('siobahn', 'siobahnschuck');
+myHashTable.insert('christina', 'hipstina');
+myHashTable.insert('luke', 'LukeArenas');
+myHashTable.insert('nick', 'NickWill24');
+myHashTable.insert('queenie', 'queeniewilliams');
 
-}
+console.log("first: ",myHashTable);
+console.log('')
+console.log('')
 
+myHashTable.insert('aaaaa', 'aaaaa');
+myHashTable.insert('bbbbb', 'bbbbb');
+myHashTable.insert('ccccc', 'ccccc');
+myHashTable.insert('ddddd', 'ddddd');
+myHashTable.insert('eeeee', 'eeeee');
+myHashTable.insert('fffff', 'fffff');
+myHashTable.insert('ggggg', 'ggggg');
+myHashTable.insert('hhhhh', 'hhhhh');
+myHashTable.insert('iiiii', 'iiiii');
+myHashTable.insert('jjjjj', 'jjjjj');
+myHashTable.insert('kkkkk', 'kkkkk');
+myHashTable.insert('lllll', 'lllll');
+myHashTable.insert('mmmmm', 'mmmmm');
+myHashTable.insert('nnnnn', 'nnnnn');
+myHashTable.insert('ooooo', 'ooooo');
+myHashTable.insert('ppppp', 'ppppp');
+myHashTable.insert('qqqqq', 'qqqqq');
+myHashTable.insert('rrrrr', 'rrrrr');
+myHashTable.insert('sssss', 'sssss');
+myHashTable.insert('ttttt', 'ttttt');
+myHashTable.insert('uuuuu', 'uuuuu');
+myHashTable.insert('vvvvv', 'vvvvv');
+myHashTable.insert('wwwww', 'wwwww');
+myHashTable.insert('xxxxx', 'xxxxx');
+myHashTable.insert('yyyyy', 'yyyyy');
+myHashTable.insert('zzzzz', 'zzzzz');
+
+console.log("second: ",myHashTable);
+console.log('')
+console.log('')
+
+console.log("finding andre: ", myHashTable.search('andre'));
+console.log('')
+console.log('')
+
+myHashTable.delete('adam');
+myHashTable.delete('hunter');
+myHashTable.delete('lizz');
+
+console.log("finding adam: ", myHashTable.search('adam'));
+console.log('');
+console.log('');
+
+myHashTable.delete('qqqqq');
+myHashTable.delete('rrrrr');
+myHashTable.delete('sssss');
+myHashTable.delete('ttttt');
+myHashTable.delete('uuuuu');
+myHashTable.delete('vvvvv');
+myHashTable.delete('wwwww');
+myHashTable.delete('xxxxx');
+myHashTable.delete('yyyyy');
+myHashTable.delete('zzzzz');
+
+console.log("final: ", myHashTable);
