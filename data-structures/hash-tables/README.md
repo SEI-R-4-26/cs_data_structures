@@ -67,7 +67,7 @@ Let's take a look at the efficiency of Hash Tables:
 Notice that they perform _very_ well with insertion, deletion, and search!
 ___
 ## Code Implementation
-Let's take a look at an implementation of a chaining hash table in `SimpleHashTable.js`/
+Let's take a look at an implementation of a chaining hash table in `HashTable.js`
 
 ## Resources
 - [VisuAlgo Hash Table](https://visualgo.net/en/hashtable)
