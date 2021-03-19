@@ -20,10 +20,13 @@ Sometimes we may need to convert a set to an array, when we want to filter the v
 ## Set Methods
 `.add(value)`
 - Appends value to the Set object. Returns the Set object with added value.
+
 `.clear()`
 - Removes all elements from the Set object.
+
 `.delete(value)`
 - Removes the element associated to the value and returns a boolean asserting whether an element was successfully removed or not. Set.prototype.has(value) will return false afterwards.
+
 `.has(value)`
 - Returns a boolean asserting whether an element is present with the given value in the Set object or not.
 
